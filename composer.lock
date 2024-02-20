@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9c491b8531eec05ba41a11d9276a5749",
+    "content-hash": "ee4057c92eeaee1b6ec699d00607e63e",
     "packages": [
         {
             "name": "brick/math",
@@ -2393,6 +2393,39 @@
                 }
             ],
             "time": "2023-02-08T01:06:31+00:00"
+        },
+        {
+            "name": "openai/openai",
+            "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/chicodgtal/openai.git",
+                "reference": "3943a54d2a974d4b3246842846cb0cf4414aa308"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/chicodgtal/openai/zipball/3943a54d2a974d4b3246842846cb0cf4414aa308",
+                "reference": "3943a54d2a974d4b3246842846cb0cf4414aa308",
+                "shasum": ""
+            },
+            "default-branch": true,
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Chico",
+                    "email": "chico@chicodgtal.com.br"
+                }
+            ],
+            "description": "ai integracao",
+            "support": {
+                "issues": "https://github.com/chicodgtal/openai/issues",
+                "source": "https://github.com/chicodgtal/openai/tree/main"
+            },
+            "time": "2023-03-12T12:19:36+00:00"
         },
         {
             "name": "phpoption/phpoption",
@@ -8114,7 +8147,7 @@
         }
     ],
     "aliases": [],
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "stability-flags": [],
     "prefer-stable": true,
     "prefer-lowest": false,
