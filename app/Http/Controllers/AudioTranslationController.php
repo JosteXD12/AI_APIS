@@ -17,7 +17,7 @@ class AudioTranslationController extends Controller
     public function process(Request $request)
     {
         $request->validate([
-            'file' => 'required|mimes:mp3,mp4,mpeg,mpga,m4a,wav,webm',
+            'file' => 'required|mimes:mp3',
         ]);
 
         $file = $request->file('file');
@@ -34,17 +34,18 @@ class AudioTranslationController extends Controller
 
         $filePath = $request->file('file')->getRealPath();
         Log::info('Ruta del archivo:', ['path' => $filePath]);
+        echo $filePath;
 
 
         $client = new Client();
         $response = $client->post('https://api.openai.com/v1/audio/transcriptions', [
             'headers' => [
-                'Authorization' => 'Bearer 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',
+                'Authorization' => 'Bearer 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',
             ],
             'multipart' => [
                 [
                     'name' => 'file',
-                    'contents' => fopen($filePath, 'r'),
+                    'contents' => fopen('C:\Users\joste\Downloads\1.mp3', 'r'),
                 ],
                 [
                     'name' => 'timestamp_granularities[]',

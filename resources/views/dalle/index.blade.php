@@ -6,7 +6,7 @@
     <title>DALL-E Image Generator</title>
 </head>
 <body>
-    <h1>DALL-E Image Generator</h1>
+    <h1>Generador de imagenes</h1>
     
     <form action="{{ route('dalle.generate') }}" method="post" id="generateForm" enctype="multipart/form-data">
         @csrf

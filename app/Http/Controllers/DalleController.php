@@ -17,7 +17,7 @@ class DalleController extends Controller
     {
         try {
             $response = Http::withHeaders([
-                'Authorization' => "Bearer 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",
+                'Authorization' => "Bearer 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",
             ])->post("https://api.openai.com/v1/images/generations", [
                     'prompt' => $request->input('prompt'),
                     'n'      => 1,
