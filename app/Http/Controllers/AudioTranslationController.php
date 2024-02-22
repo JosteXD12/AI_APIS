@@ -29,18 +29,25 @@ class AudioTranslationController extends Controller
         } else {
             echo "No se ha cargado ningún archivo.";
         }
-        
+
 
 
         $filePath = $request->file('file')->getRealPath();
         Log::info('Ruta del archivo:', ['path' => $filePath]);
-        echo $filePath;
+        
+        $openaiApiKey = config('openai.api_key');
+        
+        
 
+        $apiUrl = 'https://api.openai.com/v1/audio/transcriptions';
 
         $client = new Client();
-        $response = $client->post('https://api.openai.com/v1/audio/transcriptions', [
+        
+        $response = $client->post($apiUrl, [
+            
             'headers' => [
-                'Authorization' => 'Bearer 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',
+                'Authorization' => 'Bearer ' . $openaiApiKey,
+                
             ],
             'multipart' => [
                 [

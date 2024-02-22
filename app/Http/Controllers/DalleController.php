@@ -15,13 +15,18 @@ class DalleController extends Controller
 
     public function generateImage(Request $request)
     {
+
+        $openaiApiKey = config('openai.api_key');
+
+
+        $apiUrl = 'https://api.openai.com/v1/images/generations';
         try {
             $response = Http::withHeaders([
-                'Authorization' => "Bearer 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",
-            ])->post("https://api.openai.com/v1/images/generations", [
-                    'prompt' => $request->input('prompt'),
-                    'n'      => 1,
-                ]);
+                'Authorization' => 'Bearer ' . $openaiApiKey,
+            ])->post($apiUrl, [
+                        'prompt' => $request->input('prompt'),
+                        'n' => 1,
+                    ]);
 
             if ($response->successful()) {
                 return response()->json($response['data'][0]['url']);
